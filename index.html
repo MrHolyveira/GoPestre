@@ -20,25 +20,12 @@
   </nav>
   <div class="position-absolute top-50 start-50 translate-middle">
     <h1 class="text-center">GoPestre</h1>
-    <form method="post" action="/chat">
+    <form method="get" action="chat" onsubmit="storeUsername();">
       
       <div class="text-center">
-        <input type="submit" value="Filmes" value="click here">
-      </div>
-
-      <div class="text-center">
-        <input type="submit" value="Séries">
-      </div>
-
-      <div class="text-center">
-        <input type="submit" value="Papo sério" href="" >
-      </div>
-
-      <div class="text-center">
-        <input type="submit" value="Papo não sério">
-      </div>
-
-      
+        <input id="submit_btn" type="submit" value="Chat geral"  >
+      </div> 
+      <br>
       <div id="username-container" class="box">
         <input  type="text"
                 name="username"
@@ -46,12 +33,20 @@
                 placeholder="Nome de identificação"
                 class="box-text"
                 maxlength="50"
+                required
         >
     </div>
-
     </form>
   </div>
 
 </body>
+<script>
+
+  function storeUsername(){
+    sessionStorage.setItem("username", document.getElementById("username").value);
+
+  }
+  
+</script>
 
 </html>
