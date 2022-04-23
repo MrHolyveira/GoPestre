@@ -24,5 +24,5 @@ func main()  {
 		m.Broadcast(msg)
 	})
 
-	r.Run(os.Getenv("PORT"))
+	r.Run(":" + os.Getenv("PORT"))
 }
