@@ -4,7 +4,7 @@ import(
 	"net/http"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/olahol/melody.v1"
-	
+	"os"
 )
 func main()  {
 
@@ -24,5 +24,5 @@ func main()  {
 		m.Broadcast(msg)
 	})
 
-	r.Run(":8080")
+	r.Run(os.Getenv("PORT"))
 }
